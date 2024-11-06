@@ -22,7 +22,6 @@
     <table>
         <tr>
             <th>Логин</th>
-            <th>Пароль</th>
             <th>Email</th>
         </tr>
         <?php
@@ -30,13 +29,15 @@
         if (file_exists($file)) {
             $users = file($file, FILE_IGNORE_NEW_LINES);
             foreach ($users as $user) {
-                list($login, $password, $email) = explode(': ', $user);
-                echo "<tr><td>$login</td><td>$password</td><td>$email</td></tr>";
+                list($login, , $email) = explode(': ', $user);
+                echo "<tr><td>$login</td><td>$email</td></tr>";
             }
         } else {
-            echo "<tr><td colspan='3'>Нет данных</td></tr>";
+            echo "<tr><td colspan='2'>Нет данных</td></tr>";
         }
         ?>
     </table>
+
+    <p><a href="index.php">Назад на главную</a></p>
 </body>
 </html>
