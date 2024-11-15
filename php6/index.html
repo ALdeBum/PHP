@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск файлов</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Поиск файлов</h1>
+        <form action="search.php" method="post">
+            <label for="fileMask">Маска файлов:</label>
+            <input type="text" id="fileMask" name="fileMask" required><br><br>
+            
+            <label for="searchText">Текст для поиска (опционально):</label>
+            <input type="text" id="searchText" name="searchText"><br><br>
+            
+            <label for="disk">Выберите диск:</label>
+            <select id="disk" name="disk">
+                <option value="C:">C:</option>
+                <option value="D:">D:</option>
+                <option value="E:">E:</option>
+                <!-- Добавьте другие диски, если необходимо -->
+            </select><br><br>
+            
+            <input type="submit" value="Искать">
+        </form>
+    </div>
+</body>
+</html>
